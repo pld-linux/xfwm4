@@ -1,15 +1,12 @@
-
-%define		_snap 20040822
-
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.1.6
-Release:	0.%{_snap}.1
+Version:	4.1.90
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	437dffff772f02d4d9411c535b63cf62
+Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	5f5f4f0c74ff5c65c945f16fa7b059a7
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,7 +32,7 @@ xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
 XFce.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 glib-gettextize --copy --force
@@ -66,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO example.xfwm4rc example.gtkrc-2.0
+%doc AUTHORS ChangeLog README TODO example.gtkrc-2.0
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
 
