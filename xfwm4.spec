@@ -1,4 +1,3 @@
-
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
@@ -66,3 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*
