@@ -1,5 +1,5 @@
-Summary:	Next generation window manager for XFce
-Summary(pl):	Zarz±dca okien nowej generacji dla XFce
+Summary:	Next generation window manager for Xfce
+Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
 Version:	4.1.99.2
 Release:	1
@@ -27,11 +27,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 xfwm4 is a window manager compatible with GNOME, GNOME2, KDE2, KDE3
-and XFce.
+and Xfce.
 
 %description -l pl
 xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
-XFce.
+Xfce.
 
 %prep
 %setup -q
@@ -48,7 +48,8 @@ intltoolize --copy --force
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--enable-compositor
 
 %{__make}
 
