@@ -11,6 +11,9 @@ Group:		X11/Applications
 Source0:	%{name}-snap-%{snap}.tar.bz2
 # Source0-md5:	a5d7d4e9bae2337531f081042d7e3e33
 URL:		http://www.xfce.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -68,7 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_datadir}/xfwm4
 %{_datadir}/xfwm4/defaults
-%{_datadir}/xfwm4/themes
 %{_datadir}/themes/*
 
 %docdir %{_datadir}/xfce4/doc
