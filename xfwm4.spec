@@ -1,10 +1,10 @@
-#
-%define		_snap 20040806
-#
+
+%define		_snap 20040813
+
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.2.0
+Version:	4.1.5
 Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
@@ -16,14 +16,14 @@ BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	intltool
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4mcs-devel >= 4.1.0
+BuildRequires:	libxfcegui4-devel >= 4.1.21
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
 Requires:	gtk+2 >= 2.2.0
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
-Requires:	xfce-mcs-manager >= %{version}
+Requires:	libxfce4mcs >= 4.1.0
+Requires:	libxfcegui4 >= 4.1.21
+Requires:	xfce-mcs-manager >= 4.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -78,6 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/*/*
 
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C
-%lang(fr) %{_datadir}/xfce4/doc/fr
-%lang(it) %{_datadir}/xfce4/doc/it
+%{_datadir}/xfce4/doc/C/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
