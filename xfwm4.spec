@@ -1,23 +1,33 @@
+
+%define		xfce_ver	4.0.3
+
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.0.3
+Version:	4.0.3.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	d0c21ffab3ba30b34519a655fb56a0a5
+# Source0-md5:	0140fdd9ad66538691c33e8139c44629
 URL:		http://www.xfce.org/
 BuildRequires:	intltool
-BuildRequires:	libxfce4mcs-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+# Only for this version.
+#BuildRequires:	libxfce4mcs-devel >= %{version}
+BuildRequires:	libxfce4mcs-devel >= %{xfce_ver}
+#BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{xfce_ver}
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	startup-notification-devel >= 0.4
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
+#BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce-mcs-manager-devel >= %{xfce_ver}
+#Requires:	libxfce4mcs >= %{version}
+Requires:	libxfce4mcs >= %{xfce_ver}
+#Requires:	libxfcegui4 >= %{version}
+Requires:	libxfcegui4 >= %{xfce_ver}
 Requires:	startup-notification >= 0.4
-Requires:	xfce-mcs-manager >= %{version}
+#Requires:	xfce-mcs-manager >= %{version}
+Requires:	xfce-mcs-manager >= %{xfce_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
