@@ -62,4 +62,3 @@ rm -rf $RPM_BUILD_ROOT
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/xfce4/*.xml
