@@ -1,26 +1,26 @@
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.1.90
-Release:	0.1
+Version:	4.1.91
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	5f5f4f0c74ff5c65c945f16fa7b059a7
+# Source0-md5:	2dc11a842247a4b66fff2851aaa4b819
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	intltool
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= 4.1.0
+BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= 4.1.21
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	xfce-mcs-manager-devel >= 4.1.0
+BuildRequires:	xfce-mcs-manager-devel >= 4.1.90
 Requires:	gtk+2 >= 2.2.0
-Requires:	libxfce4mcs >= 4.1.0
+Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= 4.1.21
-Requires:	xfce-mcs-manager >= 4.1.0
+Requires:	xfce-mcs-manager >= 4.1.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
