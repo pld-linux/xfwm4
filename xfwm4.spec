@@ -21,6 +21,9 @@ BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires:	libxfce4mcs >= %{version}
+Requires:	libxfcegui4 >= 4.1.21
+Requires:	xfce-mcs-manager >= 4.1.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
