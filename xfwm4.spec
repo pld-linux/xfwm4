@@ -1,16 +1,16 @@
-
+#
+%define		snap 20040616
+#
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.0.5
-Release:	1
+Version:	4.1.0
+Release:	0.%{snap}.1
 License:	GPL
 Group:		X11/Applications
-#Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	bc061116aec0e4c45aad6d8725e619c5
+Source0:	%{name}-snap-%{snap}.tar.bz2
+# Source0-md5:	a5d7d4e9bae2337531f081042d7e3e33
 URL:		http://www.xfce.org/
-BuildRequires:	intltool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
@@ -31,19 +31,22 @@ xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
 XFce.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
-cp -f /usr/share/automake/config.sub .
-
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/themes
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -60,9 +63,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO example.xfwm4rc example.gtkrc-2.0
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
+
+%{_desktopdir}/*.desktop
+
 %dir %{_datadir}/xfwm4
 %{_datadir}/xfwm4/defaults
 %{_datadir}/xfwm4/themes
+%{_datadir}/themes/*
+
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*
+%{_datadir}/xfce4/doc/C
+%lang(fr) %{_datadir}/xfce4/doc/fr
