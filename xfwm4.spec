@@ -1,9 +1,10 @@
+%bcond_without	compositor		# without compositor extensions
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
 Version:	4.1.99.3
-Release:	1
-License:	GPL
+Release:	2
+License:	GPL v2
 Group:		X11/Applications
 #Source0:	ftp://ftp.berlios.de/pub/xfce-goodies/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
@@ -20,9 +21,6 @@ BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= 4.1.21
-Requires:	xfce-mcs-manager >= 4.1.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,8 +46,7 @@ intltoolize --copy --force
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure \
-	--enable-compositor
+%configure %{?with_compositor:--enable-compositor}
 
 %{__make}
 
