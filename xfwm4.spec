@@ -13,15 +13,16 @@ Source0:	%{name}-snap-%{snap}.tar.bz2
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	startup-notification-devel >= 0.4
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
+Requires:	gtk+2 >= 2.2.0
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
-Requires:	startup-notification >= 0.4
 Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,6 +38,8 @@ XFce.
 %setup -q -n %{name}
 
 %build
+glib-gettextize --copy --force
+intltoolize --copy --force
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoheader}
