@@ -1,3 +1,5 @@
+# TODO
+# - shouldn't own /usr/share/themes/Default?
 %bcond_without	compositor		# without compositor extensions
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
