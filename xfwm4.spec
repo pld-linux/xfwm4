@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	8942cc434fe53006f7882466e3054a81
+# Source0-md5:	a473b000be4343a777bb442b692c77ac
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
