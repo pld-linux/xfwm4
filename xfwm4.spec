@@ -1,5 +1,5 @@
 
-%define		_snap 20040813
+%define		_snap 20040816
 
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
@@ -9,7 +9,7 @@ Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	a473b000be4343a777bb442b692c77ac
+# Source0-md5:	97624f2f24731faac04d3d99b69825bb
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
