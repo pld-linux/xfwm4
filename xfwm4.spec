@@ -55,9 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO example.xfwm4rc example.gtkrc-2.0
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xfce4/mcs-plugins/*.so
+%dir %{_datadir}/xfwm4
 %{_datadir}/xfwm4/defaults
-# themes dir belongs to xfce4-panel at the moment
-%{_datadir}/xfwm4/themes/*
+%{_datadir}/xfwm4/themes
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C/*.html
 %{_datadir}/xfce4/doc/C/images/*
