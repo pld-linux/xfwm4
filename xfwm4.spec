@@ -1,15 +1,15 @@
 #
-%define		snap 20040617
+%define		_snap 20040806
 #
 Summary:	Next generation window manager for XFce
 Summary(pl):	Zarz±dca okien nowej generacji dla XFce
 Name:		xfwm4
-Version:	4.1.0
-Release:	0.%{snap}.1
+Version:	4.2.0
+Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	%{name}-snap-%{snap}.tar.bz2
-# Source0-md5:	78b3597f403c5df9d858aff851137dd4
+Source0:	http://ep09.pld-linux.org/~havner/xfce4/%{name}-%{_snap}.tar.bz2
+# Source0-md5:	8942cc434fe53006f7882466e3054a81
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -75,7 +75,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/xfwm4
 %{_datadir}/xfwm4/defaults
 %{_datadir}/themes/*
+%{_iconsdir}/hicolor/*/*/*
 
 %docdir %{_datadir}/xfce4/doc
 %{_datadir}/xfce4/doc/C
 %lang(fr) %{_datadir}/xfce4/doc/fr
+%lang(it) %{_datadir}/xfce4/doc/it
