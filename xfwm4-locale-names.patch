@@ -1,11 +1,12 @@
---- xfwm4-4.1.99.3/configure.ac.orig	2004-12-18 23:42:33.000000000 +0100
-+++ xfwm4-4.1.99.3/configure.ac	2004-12-28 17:50:58.125721104 +0100
+diff -urN xfwm4-4.2.2/configure.ac fix/xfwm4-4.2.2/configure.ac
+--- xfwm4-4.2.2/configure.ac	2005-05-15 10:43:29.000000000 +0200
++++ fix/xfwm4-4.2.2/configure.ac	2005-05-20 15:44:08.000000000 +0200
 @@ -35,7 +35,7 @@
  
  dnl Check for i18n support
- BM_I18N([xfwm4], [ar az be bg ca cs de en_GB es es_MX et eu fa fi fr gu he
--                  hi hu it ja ko lt ms nb_NO nl pa pl pt_BR pt_PT ro ru sk
-+                  hi hu it ja ko lt ms nb nl pa pl pt_BR pt ro ru sk
- 		  sv ta tr uk vi zh_CN zh_TW])
+ BM_I18N([xfwm4], [ar az be bg bn_IN ca cs de el en_GB es es_MX et eu fa fi fr
+-                  gu he hi hu it ja ko lt mr ms nb_NO nl pa pl pt_BR pt_PT ro
++                  gu he hi hu it ja ko lt mr ms nb nl pa pl pt_BR pt ro
+ 		  ru sk sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for X11 window system
