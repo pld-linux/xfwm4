@@ -2,9 +2,9 @@
 # - shouldn't own /usr/share/themes/Default?
 %bcond_without	compositor		# without compositor extensions
 Summary:	Next generation window manager for Xfce
-Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Summary(de):	Xfce, ist eine sehr schnelle, aber trotzdem nicht spartanische graphische Benutzeroberfläche
 Summary(fr):	XFCE est un environnement de bureau léger destiné aux systèmes d'exploitation apparentés à UNIX
+Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
 Version:	4.2.2
 Release:	1
@@ -35,10 +35,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 xfwm4 is a window manager compatible with GNOME, GNOME2, KDE2, KDE3
 and Xfce.
 
-%description -l pl
-xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
-Xfce.
-
 %description -l de
 Xfce, The Cholesterol Free Desktop Environment, ist eine sehr
 schnelle, aber trotzdem nicht spartanische graphische
@@ -51,6 +47,10 @@ verschiedene Themes.
 XFCE est un environnement de bureau léger destiné aux systèmes
 d'exploitation apparentés à UNIX. Il est conçu pour être rapide et
 économe en ressources, tout en restant agréable et facile à utiliser.
+
+%description -l pl
+xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
+Xfce.
 
 %prep
 %setup -q
