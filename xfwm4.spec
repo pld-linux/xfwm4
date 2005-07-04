@@ -4,13 +4,13 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Summary(de):	Xfce, ist eine sehr schnelle, aber trotzdem nicht spartanische graphische Benutzeroberfläche
-Summary(fr):	XFCE est un environnement de bureau léger destiné aux syst?mes d'exploitation apparentés ? UNIX
+Summary(fr):	XFCE est un environnement de bureau léger destiné aux systèmes d'exploitation apparentés à UNIX
 Name:		xfwm4
 Version:	4.2.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:        http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
+Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	e4c91c59da7d1bdc6141cde3263ea6f9
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
@@ -40,10 +40,17 @@ xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
 Xfce.
 
 %description -l de
-Xfce, The Cholesterol Free Desktop Environment, ist eine sehr schnelle, aber trotzdem nicht spartanische graphische Benutzeroberfläche. Programme, die mitgeliefert werden, sind unter anderem der Windowmanager xfwm4, ein Dateimanager (xffm) und ein grafisches Frontend zum Drucken. Außerdem verfügt XFce über verschiedene Themes.
+Xfce, The Cholesterol Free Desktop Environment, ist eine sehr
+schnelle, aber trotzdem nicht spartanische graphische
+Benutzeroberfläche. Programme, die mitgeliefert werden, sind unter
+anderem der Windowmanager xfwm4, ein Dateimanager (xffm) und ein
+grafisches Frontend zum Drucken. Außerdem verfügt XFce über
+verschiedene Themes.
 
 %description -l fr
-XFCE est un environnement de bureau léger destiné aux syst?mes d'exploitation apparentés ? UNIX. Il est conçu pour ?tre rapide et économe en ressources, tout en restant agréable et facile ? utiliser.
+XFCE est un environnement de bureau léger destiné aux systèmes
+d'exploitation apparentés à UNIX. Il est conçu pour être rapide et
+économe en ressources, tout en restant agréable et facile à utiliser.
 
 %prep
 %setup -q
