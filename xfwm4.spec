@@ -1,15 +1,17 @@
 # TODO
 # - shouldn't own /usr/share/themes/Default?
 %bcond_without	compositor		# without compositor extensions
+#
+%define		_xfce_ver	4.2.3
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.2.2
+Version:	4.2.3.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	e4c91c59da7d1bdc6141cde3263ea6f9
+# Source0-md5:	f42a4556e53fb298579821500045e36a
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
@@ -18,15 +20,15 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	intltool
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{version}
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libxfce4mcs-devel >= %{_xfce_ver}
+BuildRequires:	libxfcegui4-devel >= %{_xfce_ver}
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
-BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce-mcs-manager-devel >= %{_xfce_ver}
 BuildRequires:	xfce4-dev-tools
-Requires:	libxfce4mcs >= %{version}
-Requires:	libxfcegui4 >= %{version}
-Requires:	xfce-mcs-manager >= %{version}
+Requires:	libxfce4mcs >= %{_xfce_ver}
+Requires:	libxfcegui4 >= %{_xfce_ver}
+Requires:	xfce-mcs-manager >= %{_xfce_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -85,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/*/*
 
 %docdir %{_datadir}/xfce4/doc
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
+# undermentioned dirs belong to xfce-mcs-manager
+%{_datadir}/xfce4/doc/C/*
+%lang(fr) %{_datadir}/xfce4/doc/fr/*
+%lang(he) %{_datadir}/xfce4/doc/he/*
