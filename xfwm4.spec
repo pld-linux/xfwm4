@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	startup-notification-devel >= 0.5
 BuildRequires:	xfce-mcs-manager-devel >= %{_xfce_ver}
 BuildRequires:	xfce4-dev-tools
+BuildRequires:	xorg-lib-libXpm-devel
 Requires:	libxfce4mcs >= %{_xfce_ver}
 Requires:	libxfcegui4 >= %{_xfce_ver}
 Requires:	xfce-mcs-manager >= %{_xfce_ver}
