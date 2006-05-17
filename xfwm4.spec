@@ -52,7 +52,8 @@ intltoolize --copy --force
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure %{?with_compositor:--enable-compositor}
+%configure \
+	%{!?with_compositor:--disable-compositor}
 
 %{__make}
 
