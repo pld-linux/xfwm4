@@ -1,3 +1,4 @@
+# Conditional build:
 %bcond_without	compositor		# without compositor extensions
 #
 Summary:	Next generation window manager for Xfce
