@@ -11,6 +11,7 @@ Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	9c062ad26d09f59d162eb9f183a0038a
 Patch0:		%{name}-locale-names.patch
+Patch1:		%{name}-configure_ac.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -41,6 +42,7 @@ Xfce.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
