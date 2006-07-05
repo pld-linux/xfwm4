@@ -1,5 +1,3 @@
-# TODO
-# - shouldn't own /usr/share/themes/Default?
 %bcond_without	compositor		# without compositor extensions
 #
 %define		_xfce_ver	4.2.3
@@ -47,8 +45,8 @@ mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__intltoolize}
+%{__glib_gettextize}
 %{__libtoolize}
 %{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
 %{__autoheader}
