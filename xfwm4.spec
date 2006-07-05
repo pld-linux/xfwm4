@@ -1,17 +1,15 @@
-# TODO
-# - shouldn't own /usr/share/themes/Default?
 %bcond_without	compositor		# without compositor extensions
 #
 %define		_xfce_ver	4.2.3
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.2.3.1
+Version:	4.2.3.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	f42a4556e53fb298579821500045e36a
+# Source0-md5:	d73e89c50179ccb438c076b3b71d59a4
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
@@ -47,8 +45,8 @@ mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__intltoolize}
+%{__glib_gettextize}
 %{__libtoolize}
 %{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
 %{__autoheader}
