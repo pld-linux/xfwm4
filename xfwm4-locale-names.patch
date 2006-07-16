@@ -1,11 +1,12 @@
---- xfwm4-4.3.90.1/configure.ac.orig	2006-04-16 17:43:48.000000000 +0200
-+++ xfwm4-4.3.90.1/configure.ac	2006-04-26 21:24:22.663352500 +0200
-@@ -41,7 +41,7 @@
+diff -aurN xfwm4-4.3.90.2.orig/configure.ac xfwm4-4.3.90.2/configure.ac
+--- xfwm4-4.3.90.2.orig/configure.ac	2006-07-10 14:20:20.000000000 +0200
++++ xfwm4-4.3.90.2/configure.ac	2006-07-16 20:43:47.215795751 +0200
+@@ -40,7 +40,7 @@
+ AC_CHECK_FUNCS(opendir)
  
  dnl Check for i18n support
- XDT_I18N([ar az be bg bn_IN ca cs de el en_GB eo es es_MX et eu fa fi fr gu
--	  he hi hu it ja ko lt mr ms nb_NO nl pa pl pt_BR pt_PT ro ru sk
-+	  he hi hu it ja ko lt mr ms nb nl pa pl pt_BR pt ro ru sk
- 	  sv ta tr uk vi zh_CN zh_TW])
+-XDT_I18N([ar az be bg bn_IN ca cs de el en_GB eo es es_MX et eu fa fi fr gu he hi hu it ja ko lt mr ms nb_NO nl pa pl pt_BR pt_PT ro ru sk sv ta tr uk vi zh_CN zh_TW])
++XDT_I18N([ar az be bg bn_IN ca cs de el en_GB eo es es_MX et eu fa fi fr gu he hi hu it ja ko lt mr ms nb nl pa pl pt_BR pt ro ru sk sv ta tr uk vi zh_CN zh_TW])
  
  dnl Check for X11 window system
+ XDT_CHECK_LIBX11_REQUIRE
