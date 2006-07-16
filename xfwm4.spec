@@ -1,28 +1,24 @@
-# Conditional build:
-%bcond_without	compositor		# without compositor extensions
-#
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.3.90.1
+Version:	4.3.90.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	9c062ad26d09f59d162eb9f183a0038a
+# Source0-md5:	858dd3f2b430f338c7554d7e1a55d94a
 Patch0:		%{name}-locale-names.patch
-Patch1:		%{name}-configure_ac.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	intltool
+BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	intltool >= 0.35
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
 BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	startup-notification-devel >= 0.5
+BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xorg-lib-libXpm-devel
@@ -32,32 +28,28 @@ Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xfwm4 is a window manager compatible with GNOME, GNOME2, KDE2, KDE3
-and Xfce.
+xfwm4 is a EWMH standard compliant window manager.
 
 %description -l pl
-xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
-Xfce.
+xfwm4 to zarz±dca okien zgodny ze standardem EWMH.
 
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure \
-	%{!?with_compositor:--disable-compositor}
-
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
+%configure
 %{__make}
 
 %install
