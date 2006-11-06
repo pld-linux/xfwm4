@@ -1,18 +1,18 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ab8fcfdf496f093bbe711a7d853deb33
+# Source0-md5:	3186d90ae752cce9687698c8bd6b26c3
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4mcs-devel >= %{version}
@@ -23,7 +23,7 @@ BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	xfce4-dev-tools >= %{version}
 BuildRequires:	xorg-lib-libXpm-devel
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	hicolor-icon-theme
 Requires:	libxfce4mcs >= %{version}
 Requires:	libxfcegui4 >= %{version}
@@ -52,6 +52,7 @@ mv -f po/{nb_NO,nb}.po
 %{__automake}
 %{__autoconf}
 %configure
+
 %{__make}
 
 %install
