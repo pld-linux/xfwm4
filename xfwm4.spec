@@ -1,41 +1,37 @@
-%bcond_without	compositor		# without compositor extensions
-#
-%define		_xfce_ver	4.2.3
 Summary:	Next generation window manager for Xfce
 Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.2.3.2
+Version:	4.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	d73e89c50179ccb438c076b3b71d59a4
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	8bb7231a20b30bfc1936b0facb9f072c
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	intltool
+BuildRequires:	gtk+2-devel >= 2:2.8.20
+BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4mcs-devel >= %{_xfce_ver}
-BuildRequires:	libxfcegui4-devel >= %{_xfce_ver}
+BuildRequires:	libxfce4mcs-devel >= %{version}
+BuildRequires:	libxfcegui4-devel >= %{version}
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	startup-notification-devel >= 0.5
-BuildRequires:	xfce-mcs-manager-devel >= %{_xfce_ver}
-BuildRequires:	xfce4-dev-tools
-Requires:	libxfce4mcs >= %{_xfce_ver}
-Requires:	libxfcegui4 >= %{_xfce_ver}
-Requires:	xfce-mcs-manager >= %{_xfce_ver}
+BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	startup-notification-devel >= 0.8
+BuildRequires:	xfce-mcs-manager-devel >= %{version}
+BuildRequires:	xfce4-dev-tools >= %{version}
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
+Requires:	xfce-mcs-manager >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xfwm4 is a window manager compatible with GNOME, GNOME2, KDE2, KDE3
-and Xfce.
+xfwm4 is a EWMH standard compliant window manager.
 
 %description -l pl
-xfwm4 to zarz±dca okien kompatybilny z GNOME, GNOME2, KDE2, KDE3 oraz
-Xfce.
+xfwm4 to zarz±dca okien zgodny ze standardem EWMH.
 
 %prep
 %setup -q
@@ -45,15 +41,14 @@ mv -f po/{pt_PT,pt}.po
 mv -f po/{nb_NO,nb}.po
 
 %build
-%{__intltoolize}
 %{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure %{?with_compositor:--enable-compositor}
-
+%configure
 %{__make}
 
 %install
@@ -70,6 +65,12 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/mcs-plugins/*.{la,a}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -88,4 +89,4 @@ rm -rf $RPM_BUILD_ROOT
 # undermentioned dirs belong to xfce-mcs-manager
 %{_datadir}/xfce4/doc/C/*
 %lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(he) %{_datadir}/xfce4/doc/he/*
+%lang(it) %{_datadir}/xfce4/doc/it/*
