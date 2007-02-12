@@ -1,5 +1,5 @@
 Summary:	Next generation window manager for Xfce
-Summary(pl):	Zarz±dca okien nowej generacji dla Xfce
+Summary(pl.UTF-8):   ZarzÄ…dca okien nowej generacji dla Xfce
 Name:		xfwm4
 Version:	4.4.0
 Release:	1
@@ -31,8 +31,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xfwm4 is a EWMH standard compliant window manager.
 
-%description -l pl
-xfwm4 to zarz±dca okien zgodny ze standardem EWMH.
+%description -l pl.UTF-8
+xfwm4 to zarzÄ…dca okien zgodny ze standardem EWMH.
 
 %prep
 %setup -q
