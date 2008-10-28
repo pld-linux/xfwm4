@@ -1,12 +1,12 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.4.2
+Version:	4.4.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	21da77e50b07e72bba784bf3418ca067
+# Source0-md5:	d15089f06187c029aee4cb87f75c302d
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.xfce.org/
 BuildRequires:	autoconf >= 2.52
