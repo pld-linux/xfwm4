@@ -7,6 +7,7 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	538ff2554a23bf877d336e573884da9a
+Patch0:		%{name}-am.patch
 URL:		http://www.xfce.org/projects/xfwm4/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -39,6 +40,7 @@ xfwm4 to zarządca okien zgodny ze standardem EWMH.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
