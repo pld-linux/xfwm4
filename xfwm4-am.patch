@@ -1,0 +1,30 @@
+--- xfwm4-4.6.1/themes/daloa/Makefile.am~	2009-04-15 09:58:52.000000000 +0200
++++ xfwm4-4.6.1/themes/daloa/Makefile.am	2010-11-11 22:12:42.561748541 +0100
+@@ -14,7 +14,6 @@
+ 	hide-active.png							\
+ 	hide-inactive.png						\
+ 	hide-pressed.png						\
+-	hide-pressed.png						\
+ 	hide-prelight.png						\
+ 	left-active.png							\
+ 	left-inactive.png						\
+--- xfwm4-4.6.1/themes/default/Makefile.am~	2009-04-15 09:58:55.000000000 +0200
++++ xfwm4-4.6.1/themes/default/Makefile.am	2010-11-11 22:13:32.468748599 +0100
+@@ -15,7 +15,6 @@
+ 	hide-inactive.png						\
+ 	hide-prelight.png						\
+ 	hide-pressed.png						\
+-	hide-pressed.png						\
+ 	left-active.png							\
+ 	left-inactive.png						\
+ 	maximize-active.png						\
+--- xfwm4-4.6.1/themes/kokodi/Makefile.am~	2009-04-15 09:58:53.000000000 +0200
++++ xfwm4-4.6.1/themes/kokodi/Makefile.am	2010-11-11 22:14:01.208748606 +0100
+@@ -15,7 +15,6 @@
+ 	hide-inactive.png						\
+ 	hide-prelight.png						\
+ 	hide-pressed.png						\
+-	hide-pressed.png						\
+ 	left-active.png							\
+ 	left-inactive.png						\
+ 	maximize-active.png						\
