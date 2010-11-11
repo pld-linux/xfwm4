@@ -2,7 +2,7 @@ Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
 Version:	4.6.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
@@ -28,6 +28,7 @@ BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXpm-devel
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
+Requires:	xfce4-dirs >= 4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -85,8 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/*
 %{_iconsdir}/hicolor/*/*/*
 
-%docdir %{_datadir}/xfce4/doc
-# undermentioned dirs belong to libxfce4util
-%{_datadir}/xfce4/doc/C/*
-%lang(fr) %{_datadir}/xfce4/doc/fr/*
-%lang(it) %{_datadir}/xfce4/doc/it/*
+%{_datadir}/xfce4/doc/C/*.html
+%{_datadir}/xfce4/doc/C/images/*.png
+%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
+%lang(it) %{_datadir}/xfce4/doc/it/*.html
+%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
