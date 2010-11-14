@@ -58,6 +58,8 @@ install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/themes
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+
 %find_lang %{name}
 
 %clean
