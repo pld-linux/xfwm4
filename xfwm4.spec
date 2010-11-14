@@ -1,13 +1,12 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.6.1
-Release:	2
+Version:	4.7.1
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	538ff2554a23bf877d336e573884da9a
-Patch0:		%{name}-am.patch
+Source0:	http://www.xfce.org/archive/xfce/4.8pre1/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	1adba626da3fef5018e94e1b56435e20
 URL:		http://www.xfce.org/projects/xfwm4/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -19,7 +18,8 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libglade2-devel
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.12.0
-BuildRequires:	libxfcegui4-devel >= %{version}
+#BuildRequires:	libxfce4ui-devel >= %{version}
+BuildRequires:	libxfce4ui-devel >= 4.7.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
@@ -40,7 +40,6 @@ xfwm4 to zarządca okien zgodny ze standardem EWMH.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__glib_gettextize}
@@ -88,9 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/*
 %{_iconsdir}/hicolor/*/*/*
 
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
+#%{_datadir}/xfce4/doc/C/*.html
+#%{_datadir}/xfce4/doc/C/images/*.png
+#%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
+#%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
+#%lang(it) %{_datadir}/xfce4/doc/it/*.html
+#%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
