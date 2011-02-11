@@ -1,12 +1,12 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.8.0
-Release:	0.1
+Version:	4.8.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/xfce/4.8/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	e0a6ac8a8997d5bf9d5b8a202e03f84b
+Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	447433dca613180ebd6cfed4beb1c1c9
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -17,15 +17,15 @@ BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.22.0
-BuildRequires:	libxfce4ui-devel >= %{version}
+BuildRequires:	libxfce4ui-devel >= 4.8.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= 4.8.0
 BuildRequires:	xfconf-devel >= 4.8.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXcomposite-devel >= 0.2
-Requires(post,postun):	gtk-update-icon-cache
+Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
