@@ -1,33 +1,32 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.6.2
-Release:	2
+Version:	4.8.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	3e6c0c54b028b6ea60e865e55ecdf3f8
-URL:		http://www.xfce.org/projects/xfwm4/
+Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	447433dca613180ebd6cfed4beb1c1c9
+URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-devel >= 1.0.0
 BuildRequires:	dbus-glib-devel >= 0.72
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libglade2-devel
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.0
-BuildRequires:	libxfcegui4-devel >= %{version}
+BuildRequires:	libwnck-devel >= 2.22.0
+BuildRequires:	libxfce4ui-devel >= 4.8.0
 BuildRequires:	pkgconfig >= 1:0.9.0
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.6.0
-BuildRequires:	xfconf-devel >= 4.6.0
+BuildRequires:	xfce4-dev-tools >= 4.8.0
+BuildRequires:	xfconf-devel >= 4.8.0
 BuildRequires:	xorg-lib-libSM-devel
-BuildRequires:	xorg-lib-libXpm-devel
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+BuildRequires:	xorg-lib-libXcomposite-devel >= 0.2
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,7 +47,9 @@ xfwm4 to zarządca okien zgodny ze standardem EWMH.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--disable-silent-rules
+
 %{__make}
 
 %install
@@ -58,7 +59,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/themes
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -88,9 +89,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/*
 %{_iconsdir}/hicolor/*/*/*
 
-%{_datadir}/xfce4/doc/C/*.html
-%{_datadir}/xfce4/doc/C/images/*.png
-%lang(fr) %{_datadir}/xfce4/doc/fr/*.html
-%lang(fr) %{_datadir}/xfce4/doc/fr/images/*.png
-%lang(it) %{_datadir}/xfce4/doc/it/*.html
-%lang(it) %{_datadir}/xfce4/doc/it/images/*.png
+%dir %{_docdir}/xfwm4
+%dir %{_docdir}/xfwm4/html
+%{_docdir}/xfwm4/html/C
+%{_docdir}/xfwm4/html/*.css
+%lang(da) %{_docdir}/xfwm4/html/da
+%lang(el) %{_docdir}/xfwm4/html/el
+%lang(fr) %{_docdir}/xfwm4/html/fr
+%lang(gl) %{_docdir}/xfwm4/html/gl
+%lang(it) %{_docdir}/xfwm4/html/it
+%lang(sv) %{_docdir}/xfwm4/html/sv
+%lang(ug) %{_docdir}/xfwm4/html/ug
