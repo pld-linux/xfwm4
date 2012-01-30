@@ -98,5 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_docdir}/xfwm4/html/fr
 %lang(gl) %{_docdir}/xfwm4/html/gl
 %lang(it) %{_docdir}/xfwm4/html/it
+%lang(ru) %{_docdir}/xfwm4/html/ru
 %lang(sv) %{_docdir}/xfwm4/html/sv
+%lang(tr) %{_docdir}/xfwm4/html/tr
 %lang(ug) %{_docdir}/xfwm4/html/ug
+%lang(zh_CN) %{_docdir}/xfwm4/html/zh_CN
