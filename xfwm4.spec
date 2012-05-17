@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	66cb65797cea8a62563f69b833c7888b
+# Source0-md5:	333e5e25a85411c304e9b4474bf00537
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
