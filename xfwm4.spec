@@ -88,18 +88,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xfwm4/defaults
 %{_datadir}/themes/*
 %{_iconsdir}/hicolor/*/*/*
-
-%dir %{_docdir}/xfwm4
-%dir %{_docdir}/xfwm4/html
-%{_docdir}/xfwm4/html/C
-%{_docdir}/xfwm4/html/*.css
-%lang(da) %{_docdir}/xfwm4/html/da
-%lang(el) %{_docdir}/xfwm4/html/el
-%lang(fr) %{_docdir}/xfwm4/html/fr
-%lang(gl) %{_docdir}/xfwm4/html/gl
-%lang(it) %{_docdir}/xfwm4/html/it
-%lang(ru) %{_docdir}/xfwm4/html/ru
-%lang(sv) %{_docdir}/xfwm4/html/sv
-%lang(tr) %{_docdir}/xfwm4/html/tr
-%lang(ug) %{_docdir}/xfwm4/html/ug
-%lang(zh_CN) %{_docdir}/xfwm4/html/zh_CN
