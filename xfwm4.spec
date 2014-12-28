@@ -12,7 +12,7 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-devel >= 1.0.0
 BuildRequires:	dbus-glib-devel >= 0.72
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
