@@ -1,19 +1,21 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
+%define	gitver	git.7dcea0cf
 Version:	4.13.0
-Release:	1
+Release:	1.%{gitver}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	1d4e0b50b77f60988db8f61564799023
+#Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.13/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}%{gitver}.tar.bz2
+# Source0-md5:	336eb05b20ead40959be88d4cba47fad
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-devel >= 1.0.0
 BuildRequires:	dbus-glib-devel >= 0.72
 BuildRequires:	gettext-tools
-BuildRequires:	gtk+2-devel >= 2:2.24.0
+BuildRequires:	gtk+3-devel
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	libwnck2-devel >= 2.22.0
@@ -22,9 +24,10 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xfce4-dev-tools >= 4.12.0
-BuildRequires:	xfconf-devel >= 4.12.0
+BuildRequires:	xfconf-devel >= 4.13.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXcomposite-devel >= 0.2
+BuildRequires:	xorg-lib-libXpresent-devel
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Requires:	xfce4-dirs >= 4.6
@@ -37,7 +40,7 @@ xfwm4 is a EWMH standard compliant window manager.
 xfwm4 to zarządca okien zgodny ze standardem EWMH.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{gitver}
 
 %build
 %{__glib_gettextize}
@@ -48,7 +51,8 @@ xfwm4 to zarządca okien zgodny ze standardem EWMH.
 %{__automake}
 %{__autoconf}
 %configure \
-	--disable-silent-rules
+	--disable-silent-rules \
+	--enable-maintainer-mode
 
 %{__make}
 
