@@ -1,14 +1,12 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-%define	gitver	git.7dcea0cf
-Version:	4.13.0
-Release:	1.%{gitver}.1
+Version:	4.13.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-#Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.13/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}%{gitver}.tar.bz2
-# Source0-md5:	336eb05b20ead40959be88d4cba47fad
+Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.13/%{name}-%{version}.tar.bz2
+# Source0-md5:	aee4a8375beeae09715e77479610ff02
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -40,16 +38,9 @@ xfwm4 is a EWMH standard compliant window manager.
 xfwm4 to zarządca okien zgodny ze standardem EWMH.
 
 %prep
-%setup -q -n %{name}-%{version}%{gitver}
+%setup -q
 
 %build
-%{__glib_gettextize}
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure \
 	--disable-silent-rules \
 	--enable-maintainer-mode
