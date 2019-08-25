@@ -1,12 +1,12 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.13.3
+Version:	4.14.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	e53081e5928d401604d158429716e699
+Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	c33847836958d540e3ecd0a27f131c0f
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -21,8 +21,8 @@ BuildRequires:	libxfce4ui-devel >= 4.12.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.12.0
-BuildRequires:	xfconf-devel >= 4.13.0
+BuildRequires:	xfce4-dev-tools >= 4.14.0
+BuildRequires:	xfconf-devel >= 4.14.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXcomposite-devel >= 0.2
 BuildRequires:	xorg-lib-libXpresent-devel
