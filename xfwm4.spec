@@ -1,28 +1,28 @@
 Summary:	Next generation window manager for Xfce
 Summary(pl.UTF-8):	Zarządca okien nowej generacji dla Xfce
 Name:		xfwm4
-Version:	4.14.5
+Version:	4.16.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	e6e55be91f55ca59e90921f40a4d9682
+Source0:	http://archive.xfce.org/src/xfce/xfwm4/4.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	c464e52540cef79059ef31eb2fa6dc12
 URL:		http://www.xfce.org/projects/xfwm4
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-devel >= 1.0.0
 BuildRequires:	dbus-glib-devel >= 0.72
 BuildRequires:	gettext-tools
-BuildRequires:	gtk+3-devel
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
-BuildRequires:	libwnck2-devel >= 2.22.0
+BuildRequires:	libwnck-devel >= 3.14
 BuildRequires:	libxfce4ui-devel >= 4.12.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xfce4-dev-tools >= 4.14.0
-BuildRequires:	xfconf-devel >= 4.14.0
+BuildRequires:	xfce4-dev-tools >= 4.16.0
+BuildRequires:	xfconf-devel >= 4.16.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libXcomposite-devel >= 0.2
 BuildRequires:	xorg-lib-libXpresent-devel
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO example.gtkrc-2.0
+%doc AUTHORS ChangeLog TODO example.gtkrc-2.0
 %attr(755,root,root) %{_bindir}/xfwm4
 %attr(755,root,root) %{_bindir}/xfwm4-settings
 %attr(755,root,root) %{_bindir}/xfwm4-tweaks-settings
